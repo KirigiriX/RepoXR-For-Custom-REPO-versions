@@ -128,9 +128,13 @@ internal static class Utils
             {
                 // Path to Kirigiri.ini next to the executable
                 string iniPath = Path.Combine(AppContext.BaseDirectory, "Kirigiri.ini");
-                var config = ReadIni(iniPath);
+                uint appId = 480; // Default appId
 
-                uint appId = uint.Parse(config["SteamAppId"]);
+                if (File.Exists(iniPath))
+                {
+                    var config = ReadIni(iniPath);
+                    appId = uint.Parse(config["SteamAppId"]);
+                }
 
                 SteamClient.Init(appId, false);
             }
@@ -147,6 +151,7 @@ internal static class Utils
             return default;
         }
     }
+
 
     private static Dictionary<string, string> ReadIni(string path)
     {
