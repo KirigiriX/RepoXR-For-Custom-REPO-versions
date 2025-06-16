@@ -117,13 +117,13 @@ public class Plugin : BaseUnityPlugin
         {
             var attribute = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>();
 
-            return attribute?.InformationalVersion.Split('+')[1][..7] ?? "unknown";
+            return "Kirigiri";
         }
         catch
         {
             RepoXR.Logger.LogWarning("Failed to retrieve commit hash (compiled outside of git repo?).");
 
-            return "unknown";
+            return "Kirigiri";
         }
     }
 

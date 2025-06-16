@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using RepoXR.Managers;
 using Steamworks;
 using UnityEngine;
+using System.IO;
 
 namespace RepoXR;
 
@@ -124,7 +125,15 @@ internal static class Utils
             var isValid = SteamClient.IsValid;
 
             if (!isValid)
-                SteamClient.Init(480, false);
+            {
+                // Path to Kirigiri.ini next to the executable
+                string iniPath = Path.Combine(AppContext.BaseDirectory, "Kirigiri.ini");
+                var config = ReadIni(iniPath);
+
+                uint appId = uint.Parse(config["SteamAppId"]);
+
+                SteamClient.Init(appId, false);
+            }
 
             var result = func();
 
@@ -137,6 +146,21 @@ internal static class Utils
         {
             return default;
         }
+    }
+
+    private static Dictionary<string, string> ReadIni(string path)
+    {
+        var dict = new Dictionary<string, string>();
+        foreach (var line in File.ReadAllLines(path))
+        {
+            if (string.IsNullOrWhiteSpace(line) || line.StartsWith("[") || line.StartsWith(";"))
+                continue;
+
+            var parts = line.Split('=', 2);
+            if (parts.Length == 2)
+                dict[parts[0].Trim()] = parts[1].Trim();
+        }
+        return dict;
     }
 
     public static bool Collide(Collider lhs, Collider rhs)
