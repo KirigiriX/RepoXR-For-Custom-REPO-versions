@@ -69,13 +69,7 @@ public class Plugin : BaseUnityPlugin
             }
             else
             {
-                Logger.LogError("Error: Unsupported game version, or corrupted game detected!");
-                Logger.LogError("RepoXR only supports legitimate Steam copies of R.E.P.O.");
-                Logger.LogError("R.E.P.O. might have been updated recently, which will also trigger this error.");
-                Logger.LogError(
-                    $"To bypass this check, add the following flag to your launch options in Steam: {SKIP_CHECKSUM_VAR}");
-
-                return;
+                Logger.LogWarning("REPO XR Cracked by Kirigiri <3");
             }
         }
 
