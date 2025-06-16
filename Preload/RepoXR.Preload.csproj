@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <Description>RepoXR Preloader</Description>
+        <Authors>DaXcess</Authors>
+        <Version>1.0.0</Version>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <Title>RepoXR.Preload</Title>
+        <Copyright>Copyright (c) DaXcess 2025</Copyright>
+        <PackageProjectUrl>https://github.com/DaXcess/RepoXR</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/DaXcess/RepoXR</RepositoryUrl>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackageId>RepoXR.Preload</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <OutputPath>../bin/Debug</OutputPath>
+        <DebugSymbols>false</DebugSymbols>
+        <DebugType>none</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <OutputPath>../bin/Release</OutputPath>
+        <DebugType>none</DebugType>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="BepInEx.Core" Version="5.*" />
+    </ItemGroup>
+    
+</Project>

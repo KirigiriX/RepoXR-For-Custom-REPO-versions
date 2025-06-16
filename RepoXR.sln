@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoXR", "RepoXR.csproj", "{81E20205-9F8E-48BA-B546-4BC74728287A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoXR.Preload", "Preload\RepoXR.Preload.csproj", "{6D327EC7-7B25-44EC-AD10-E75422BFCAB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81E20205-9F8E-48BA-B546-4BC74728287A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E20205-9F8E-48BA-B546-4BC74728287A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E20205-9F8E-48BA-B546-4BC74728287A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E20205-9F8E-48BA-B546-4BC74728287A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D327EC7-7B25-44EC-AD10-E75422BFCAB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D327EC7-7B25-44EC-AD10-E75422BFCAB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D327EC7-7B25-44EC-AD10-E75422BFCAB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D327EC7-7B25-44EC-AD10-E75422BFCAB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
